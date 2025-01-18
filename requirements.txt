@@ -7,3 +7,5 @@ duckduckgo-search
 fastapi
 uvicorn
 streamlit
+fastapi[standard]
+sqlalchemy

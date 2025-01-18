@@ -2,7 +2,6 @@ from phi.agent import Agent
 from phi.model.openai import OpenAIChat
 from phi.tools.yfinance import YFinanceTools
 from phi.tools.duckduckgo import DuckDuckGo
-from phi.playground import Playground, serve_playground_app
 from dotenv import load_dotenv
 import streamlit as st
 
@@ -34,19 +33,14 @@ multi_agent = Agent(
     markdown=True,
 )
 
-app = Playground(agents=[finance_agent, web_search_agent]).get_app()
+st.title("Multi Agent")
 
-if __name__ == "__main__":
-    serve_playground_app(app)
+st.text("This is a multi-agent system that can help you with web search and finance information")
+st.text("You can ask any question related to finance or search for any information on the web")
 
-# st.title("Multi Agent")
+question = st.text_input("Ask any question", key="question")
 
-# st.text("This is a multi-agent system that can help you with web search and finance information")
-# st.text("You can ask any question related to finance or search for any information on the web")
+response = multi_agent.run(question)
 
-# question = st.text_input("Ask any question", key="question")
-
-# response = multi_agent.run(question)
-
-# if question:
-#     st.write(response.content)
+if question:
+    st.write(response.content)
