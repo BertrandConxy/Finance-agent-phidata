@@ -52,8 +52,8 @@ PHI_API_KEY=your_phi_api_key
 
 ## How to Run
 ```bash
-git clone https://github.com/yourusername/multi-agent-system.git
-cd multi-agent-system
+git clone https://github.com/yourusername/finance-agent-phidata.git
+cd finance-agent-phidata
 ```
 
 2. ```bash
